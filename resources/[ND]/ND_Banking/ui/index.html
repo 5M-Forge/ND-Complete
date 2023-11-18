@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://use.fontawesome.com/releases/v6.2.1/js/all.js" data-auto-a11y="true"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="script.js" type="text/javascript" defer></script>
+    </head>
+    <body>
+        <div class="atm">
+            <div class="atm-transactionValues"></div>
+            <p id="atm-transactionNotification"></p>
+            <button>Withdraw</button>
+        </div>
+        <div class="bank">
+            <div class="bank-nav">
+                <img src="img/fleeca.png">
+                <button data-page="home" id="homeButton"><i class="fa-solid fa-house-user"></i> Home</button>
+                <button data-page="invoice"><i class="fa-solid fa-file-invoice" style="margin-left: 7%;"></i> Invoices</button>
+                <button data-page="transfer"><i class="fa-solid fa-money-bill-transfer"></i> Transfer</button>
+                <button data-page="close" id="exitButton"><i class="fa-solid fa-right-from-bracket"></i> Close</button>
+            </div>
+            <div class="bank-home">
+                <div class="bank-home-card">
+                    <img class="bank-home-card-logo" src="img/NDLogoBlack.png">
+                    <p class="bank-home-card-balance">$0</p>
+                    <div class="tooltip">
+                        <p class="bank-home-card-number"></p>
+                    </div>
+                    <p class="bank-home-card-name"></p>
+                    <img class="bank-home-card-shark" src="img/sharkCard.png">
+                </div>
+                <div class="bank-home-box">
+                    <p>History:</p>
+                    <div class="bank-home-boxContent"></div>
+                </div>
+                <div class="bank-home-transaction">
+                    <p id="transactionNotification"></p>
+                    <input type="number" placeholder="Amount">
+                    <p id="bank-home-transaction-currency">$</p>
+                    <div>
+                        <button>Deposit</button><button>Withdraw</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bank-invoice">
+                <div class="bank-invoice-top">
+                    <p>Create invoice:</p>
+                    <p id="createInvoiceNitification"></p>
+                </div>
+                <div class="bank-invoice-top">
+                    <p>Invoices:</p>
+                    <div>
+                        <button class="bank-invoice-button-requests">Requests</button><button class="bank-invoice-button-unpaid">Unpaid</button><button class="bank-invoice-button-paid">Paid</button><button class="bank-invoice-button-sent">Sent</button>
+                    </div>
+                </div>
+                <div class="bank-invoice-creator">
+                    <div>
+                        <input id="createInvoice-account" type="number" placeholder="Account number"><input id="createInvoice-amount" type="number" placeholder="Amount">
+                    </div>
+                    <input type="number" placeholder="Days to pay" min="1">
+                    <button>Send</button>
+                </div>
+                <div class="bank-invoice-box"></div>
+            </div>
+            <div class="bank-transfer">
+                <p id="transferNotification"></p>
+                <input id="transferAccount" type="number" placeholder="Receiver account number">
+                <input id="transferAmount" type="number" placeholder="Amount">
+                <input id="transferMessage" type="text" placeholder="Note (optional)">
+                <button>Send</button>
+            </div>
+        </div>
+    </body>
+</html>

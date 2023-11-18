@@ -1,0 +1,571 @@
+:root {
+    --color-main-1: #162640;
+    --color-main-2: #121F33;
+    --color-main-3: #2C4B7D;
+    --color-main-4: #2c4b7d67;
+    --color-theme-1: #15593C;
+    --color-theme-2: #259967;
+    --color-theme-3: #06e987;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    outline: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--color-main-3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: var(--color-theme-2);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-theme-3);
+}
+
+.tooltip .tooltiptext {
+    scale: 0;
+    visibility: hidden;
+    position: absolute;
+    padding: 5px 7px;
+    
+    margin: auto;
+    width: max-content;
+    right: 0;
+    left: 0;
+    bottom: 150%;
+
+    background-color: rgb(30, 30, 30, 0.8);
+    color: #fff;
+    font-size: 1.3ch;
+    text-align: center;
+    border-radius: 6px;
+
+    opacity: 0;
+    z-index: 1;
+    transition: 0.2s;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(30, 30, 30, 0.8) transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    scale: 1;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.atm {
+    scale: 0;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    width: 30vw;
+    height: fit-content;
+    border-radius: 15px;
+    background: var(--color-main-2);
+    background: linear-gradient(135deg, rgba(22,38,64,1) -50%, rgba(44,75,125,1) 150%);
+    overflow: hidden;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    transition: 0.2s;
+}
+.atm-transactionValues {
+    margin: 5% auto 2% auto;
+    width: 93.35%;
+}
+.atm-transactionValues > button {
+    opacity: 0.6;
+    margin: 1%;
+    width: 8.77441vw;
+    height: 3.5vh;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--color-theme-2);
+    border: var(--color-theme-2) 1px solid;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    transition: 0.2s;
+}
+.atm-transactionValues > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: var(--color-main-3) !important;
+    color: var(--color-theme-3) !important;
+    border: var(--color-theme-3) 1px solid !important;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 12px !important;
+}
+#atm-transactionNotification {
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    margin: auto;
+    color: var(--color-theme-3);
+    font-size: 2ch;
+    text-align: center;
+}
+.atm > button {
+    position: relative;
+    left: 30%;
+    width: 40%;
+    height: 3.5vh;
+    margin: 5% auto;
+    background-color: var(--color-main-3);
+    color: var(--color-theme-3);
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    transition: 0.2s;
+}
+.atm > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    opacity: 0.6;
+}
+
+.bank {
+    display: grid;
+    grid-template-columns: 13% 1fr;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 15px;
+    background: var(--color-main-2);
+    background: linear-gradient(135deg, rgba(22,38,64,1) -50%, rgba(44,75,125,1) 150%);
+    overflow: hidden;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.bank-nav {
+    display: grid;
+    grid-template-rows: 15% 10% 10% 10% 3%;
+    height: 80vh;
+    background-color: var(--color-main-4);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.bank-nav > button {
+    display: grid;
+    margin: auto 5%;
+    padding: 10% 15%;
+    grid-template-columns: 0.3fr 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--color-theme-2);
+    border: none;
+    font-size: 2.25ch;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+.bank-nav > button:hover {
+    transition: 0.3s;
+    background-color: var(--color-main-4) !important;
+    color: var(--color-theme-3) !important;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
+.bank-nav > img {
+    width: 80%;
+    margin: auto;
+}
+#exitButton {
+    margin-top: 25vh;
+}
+
+.bank-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 80vh;
+}
+.bank-home-card {
+    position: relative;
+    margin: auto;
+    width: 65%;
+    height: 53%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+
+    background: rgb(44,75,125);
+    background: linear-gradient(135deg, rgb(57, 90, 145) -50%, rgb(29, 50, 83) 150%);
+
+    transition: 0.2s;
+}
+.bank-home-card:hover {
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+}
+
+.bank-home-card-balance {
+    position: absolute;
+    margin: 0;
+    top: 20%;
+    left: 7%;
+    font-size: 3.5ch;
+    color: #ccc;
+}
+.bank-home-card-number {
+    position: absolute;
+    margin: 0;
+    left: 7%;
+    bottom: 35%;
+    font-size: 2.1ch;
+    color: #ccc;
+}
+.bank-home-card-number:hover {
+    cursor: pointer;
+}
+.bank-home-card-name {
+    position: absolute;
+    margin: 0;
+    left: 7%;
+    bottom: 10%;
+    font-size: 2.1ch;
+    color: #ccc;
+}
+.bank-home-card-logo {
+    position: absolute;
+    margin: 0;
+    top: 10%;
+    right: 5%;
+    width: 20%;
+}
+.bank-home-card-shark {
+    position: absolute;
+    margin: 0;
+    right: 6%;
+    bottom: 8%;
+    width: 10%;
+}
+
+.bank-home-box {
+    display: grid;
+    grid-template-rows: 20% 1fr;
+}
+.bank-home-box > p {
+    margin: 8% 0 0 0;
+    font-size: 2.5ch;
+    color: #ccc;
+    text-align: center;
+}
+.bank-home-boxContent {
+    position: absolute;
+    margin: auto;
+    top: 10%;
+    right: 1%;
+    height: 60vh;
+    width: 40%;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+.bank-home-boxContent > div {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    color: #ccc;
+
+    margin: 2% 5%;
+    padding: 2% 5%;
+    height: 10%;
+    width: 80%;
+    background-color: var(--color-main-4);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.bank-home-boxContent > div:hover {
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+}
+.bank-home-boxContent > div > div > h4, .bank-home-boxContent > div > div > p {
+    margin: 0.85vh 0;
+}
+
+.bank-home-transaction > p {
+    position: absolute;
+    margin: 0;
+    left: 22%;
+    bottom: 21vh;
+
+    color: var(--color-theme-3);
+    font-size: 2.25ch;
+}
+.bank-home-transaction > input {
+    position: relative;
+    margin: 0 17.5%;
+    top: 15%;
+    left: 0;
+    right: 0;
+
+    padding: 1% 5% 1% 8%;
+    height: 7%;
+    width: 52%;
+    border-radius: 8px;
+
+    outline: none;
+    background: none;
+    background-color: var(--color-main-4);
+    border: none;
+    color: var(--color-theme-3);
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    font-size: 1.85ch;
+}
+.bank-home-transaction > input::placeholder {
+    color: #ccc;
+}
+.bank-home-transaction > input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
+}
+.bank-home-transaction > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3%;
+    width: 65%;
+    height: 8%;
+    margin: 15% 17.5%;
+}
+.bank-home-transaction > div > button {
+    background-color: var(--color-main-3);
+    color: var(--color-theme-3);
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    transition: 0.2s;
+}
+.bank-home-transaction > div > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    opacity: 0.6;
+}
+
+.bank-invoice {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.15fr 1fr;
+    column-gap: 2.5%;
+
+    position: relative;
+    top: 4%;
+    height: 65vh;
+    width: 100%;
+}
+.bank-invoice-top > p {
+    margin: 2% auto;
+    text-align: center;
+    color: #ccc;
+    font-size: 2.5ch;
+}
+.bank-invoice-top > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 3%;
+    margin: auto;
+    width: 70%;
+    height: 30%;
+}
+.bank-invoice-top > div > button {
+    background-color: var(--color-main-3);
+    color: var(--color-theme-3);
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.bank-invoice-top > div > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px !important;
+    opacity: 0.4 !important;
+}
+.bank-invoice-box {
+    /* border: var(--color-theme-1) 2px solid; */
+    /* box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 12px; */
+    border-radius: 8px;
+    height: 55vh;
+    overflow-y: auto;
+}
+.bank-invoice-box > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: #ccc;
+    margin: 2% 5%;
+    padding: 2% 5%;
+    height: 10%;
+    width: 80%;
+    background-color: var(--color-main-4);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 12px;
+    border-radius: 8px;
+}
+.bank-invoice-box > div > div > h4, .bank-invoice-box > div > div > p {
+    margin: 0.85vh 0;
+}
+.bank-invoice-box > div > div > button {
+    display: inline-block;
+    position: relative;
+    margin: 2.5% auto;
+    height: 40%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--color-theme-2);
+    border: var(--color-theme-2) 1px solid;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    transition: 0.2s;
+}
+.bank-invoice-box > div > div > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: var(--color-main-3);
+    color: var(--color-theme-3);
+    border: var(--color-theme-3) 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 12px;
+}
+
+.bank-invoice-creator {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6% 6% 6%;
+    row-gap: 2%;
+    margin: 0 auto;
+    width: 80%;
+}
+.bank-invoice-creator > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    margin: 0;
+}
+.bank-invoice-creator > div > input, .bank-invoice-creator > input {
+    padding: 1% 5%;
+    border-radius: 8px;
+
+    outline: none;
+    background: none;
+    background-color: var(--color-main-4);
+    border: none;
+    color: var(--color-theme-3);
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    font-size: 1.85ch;
+}
+.bank-invoice-creator > input {
+    padding: 1% 2.5%;
+}
+.bank-invoice-creator > div > input::placeholder, .bank-invoice-creator > input::placeholder {
+    color: #ccc;
+}
+.bank-invoice-creator > div > input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.bank-invoice-creator > button {
+    margin: 2% auto;
+    height: 100%;
+    width: 50%;
+    background-color: var(--color-main-3);
+    color: var(--color-theme-3);
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    transition: 0.2s;
+}
+.bank-invoice-creator > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    opacity: 0.6;
+}
+
+#createInvoiceNitification {
+    display: none;
+    margin: 0;
+    color: var(--color-theme-3);
+    font-size: 2ch;
+    text-align: center;
+}
+#transactionNotification {
+    bottom: 25vh;
+    left: 14vw;
+    width: 30%;
+    text-align: center;
+}
+#transferNotification {
+    display: none;
+    position: absolute;
+    margin: 0;
+
+    top: 15%;
+    left: 22vw;
+    width: 50%;
+
+    color: var(--color-theme-3);
+    font-size: 2ch;
+    text-align: center;
+}
+
+.bank-transfer {
+    display: grid;
+    grid-template-rows: repeat(5, 5%);
+    row-gap: 1.5%;
+    width: 50%;
+    height: 80vh;
+    margin: 15% auto 0 auto;
+}
+.bank-transfer > input {
+    padding: 1% 2%;
+    border-radius: 8px;
+    outline: none;
+    background: none;
+    background-color: var(--color-main-4);
+    border: none;
+    color: var(--color-theme-3);
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    font-size: 1.85ch;
+}
+.bank-transfer > input::placeholder {
+    color: #ccc;
+}
+.bank-transfer > input[type=number]::-webkit-inner-spin-button {
+    appearance: none;
+}
+.bank-transfer > button {
+    margin: 2% auto;
+    height: 100%;
+    width: 50%;
+    background-color: var(--color-main-3);
+    color: var(--color-theme-3);
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 12px;
+    font-size: 1.85ch;
+    transition: 0.2s;
+}
+.bank-transfer > button:hover {
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 12px;
+    opacity: 0.6;
+}
